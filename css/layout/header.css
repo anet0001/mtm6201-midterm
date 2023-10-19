@@ -11,7 +11,7 @@ nav.header .logo {
   flex: 1;
 }
 
-nav.header .header__links {
+.header__links {
   grid-column: 4 / span 2;
   justify-self: end;
   --pixel-value: 50;
@@ -22,14 +22,14 @@ nav.header .header__links {
   gap: calc(var(--pixel-value) / 16 * 1rem);
 }
 
-nav.header .header__link span.outer {
+.header__link span.outer {
   --scale-x: 0;
   display: inline-block;
   position: relative;
   overflow: hidden;
 }
 
-nav.header .header__link span.outer::after {
+.header__link span.outer::after {
   content: "";
   position: absolute;
   bottom: 0px;
@@ -56,7 +56,7 @@ nav.header .header__link span.outer::after {
   animation: fadeIn 0.5s cubic-bezier(0.85, 0, 0.15, 1) backwards;
 }
 
-nav.header .header__link a span {
+.header__link a span {
   display: inline-block;
   color: var(--clr-text-primary);
   transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1);
@@ -64,59 +64,59 @@ nav.header .header__link a span {
   vertical-align: middle;
 }
 
-nav.header .header__link a span.inner {
+.header__link a span.inner {
   position: relative;
 }
 
-nav.header .header__link a:hover span.inner,
-nav.header .header__link a:focus span.inner {
+.header__link a:hover span.inner,
+.header__link a:focus span.inner {
   transform: translateY(calc(-100% - 1px));
 }
 
-nav.header .header__link a:hover span.inner::after,
-nav.header .header__link a:focus span.inner::after {
+.header__link a:hover span.inner::after,
+.header__link a:focus span.inner::after {
   transform: translateY(0);
 }
 
-nav.header .header__link a span.inner::after {
+.header__link a span.inner::after {
   position: absolute;
   top: calc(100% + 1px);
   left: 0;
 }
 
-nav.header .header__link:nth-of-type(1) a span.inner::after {
+.header__link:nth-of-type(1) a span.inner::after {
   content: "HOME";
 }
 
-nav.header .header__link:nth-of-type(2) a span.inner::after {
+.header__link:nth-of-type(2) a span.inner::after {
   content: "ABOUT";
 }
 
-nav.header .header__link:nth-of-type(3) a span.inner::after {
+.header__link:nth-of-type(3) a span.inner::after {
   content: "SHOP";
 }
 
-nav.header .header__link:nth-of-type(4) a span.inner::after {
+.header__link:nth-of-type(4) a span.inner::after {
   content: "CONTACT";
 }
 
-nav.header .header__link:nth-of-type(1) a {
+.header__link:nth-of-type(1) a {
   animation-delay: 1.5s;
 }
 
-nav.header .header__link:nth-of-type(2) a {
+.header__link:nth-of-type(2) a {
   animation-delay: 1.55s;
 }
 
-nav.header .header__link:nth-of-type(3) a {
+.header__link:nth-of-type(3) a {
   animation-delay: 1.6s;
 }
 
-nav.header .header__link:nth-of-type(4) a {
+.header__link:nth-of-type(4) a {
   animation-delay: 1.65s;
 }
 
-nav.header .header__link .menu__toggle {
+.header__link .menu__toggle {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -124,7 +124,7 @@ nav.header .header__link .menu__toggle {
   z-index: 500;
 }
 
-nav.header .header__link .menu__toggle .line {
+.header__link .menu__toggle .line {
   width: 1.5rem;
   height: 1px;
   background-color: var(--clr-text-primary);
@@ -132,31 +132,31 @@ nav.header .header__link .menu__toggle .line {
   animation: revealLine 0.5s 1.75s cubic-bezier(0.85, 0, 0.15, 1) backwards;
 }
 
-nav.header .header__link .menu__toggle .line:last-of-type {
+.header__link .menu__toggle .line:last-of-type {
   animation-delay: 1.8s;
 }
 
-nav.header .header__link label:hover {
+.header__link label:hover {
   cursor: pointer;
 }
 
-nav.header .header__link input:focus + label {
+.header__link input:focus + label {
   outline: 1px dotted red;
 }
 
-nav.header .header__link #menu-toggle {
+.header__link #menu-toggle {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
 
-nav.header .header__link .menu__toggle {
+.header__link .menu__toggle {
   position: relative;
   z-index: 600;
 }
 
-nav.header .header__link .menu__container {
+.header__link .menu__container {
   position: fixed;
   right: 0;
   top: 0;
@@ -169,15 +169,15 @@ nav.header .header__link .menu__container {
   transform: translateY(-100%);
 }
 
-nav.header .header__link #menu-toggle:checked ~ .menu__container {
+.header__link #menu-toggle:checked ~ .menu__container {
   transform: translateY(0);
 }
 
-/* nav.header .header__link #menu-toggle:checked ~ .menu__toggle svg path:nth-of-type(1) {
+/* .header__link #menu-toggle:checked ~ .menu__toggle svg path:nth-of-type(1) {
   transform: rotate(45deg);
 } */
 
-nav.header .cart {
+.cart {
   grid-column: 6 / -1;
   align-self: center;
   justify-self: end;
@@ -185,11 +185,11 @@ nav.header .cart {
 }
 
 /* adding focus state to labels since they are not there by default. */
-nav.header .cart input:focus + label {
+.cart input:focus + label {
   outline: 1px dotted red;
 }
 
-nav.header .cart__toggle {
+.cart__toggle {
   position: relative;
   display: inline-block;
   overflow: hidden;
@@ -200,21 +200,21 @@ nav.header .cart__toggle {
   animation: fadeIn 0.5s 1.8s cubic-bezier(0.85, 0, 0.15, 1) backwards;
 }
 
-nav.header .cart__toggle span {
+.cart__toggle span {
 }
 
-nav.header .cart__toggle:hover {
+.cart__toggle:hover {
   cursor: pointer;
 }
 
-nav.header #cart-toggle {
+#cart-toggle {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
 
-nav.header .cart__container {
+.cart__container {
   position: fixed;
   right: 0;
   top: 0;
@@ -227,6 +227,6 @@ nav.header .cart__container {
   transform: translateX(110%);
 }
 
-nav.header #cart-toggle:checked ~ .cart__container {
+#cart-toggle:checked ~ .cart__container {
   transform: translateX(0);
 }
