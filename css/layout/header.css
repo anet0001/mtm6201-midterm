@@ -22,7 +22,7 @@ nav.header .header__links {
   gap: calc(var(--pixel-value) / 16 * 1rem);
 }
 
-nav.header .header__link span {
+nav.header .header__link span.outer {
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -35,6 +35,48 @@ nav.header .header__link a {
   font-size: 0.85rem;
   font-weight: 300;
   animation: fadeIn 0.5s cubic-bezier(0.85, 0, 0.15, 1) backwards;
+}
+
+nav.header .header__link a span {
+  display: inline-block;
+  color: var(--clr-text-primary);
+  transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1);
+  position: relative;
+  vertical-align: middle;
+}
+
+nav.header .header__link a span.inner {
+  position: relative;
+}
+
+nav.header .header__link a:hover span.inner {
+  transform: translateY(calc(-100% - 1px));
+}
+
+nav.header .header__link a:hover span.inner::after {
+  transform: translateY(0);
+}
+
+nav.header .header__link a span.inner::after {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+}
+
+nav.header .header__link:nth-of-type(1) a span.inner::after {
+  content: "HOME";
+}
+
+nav.header .header__link:nth-of-type(2) a span.inner::after {
+  content: "ABOUT";
+}
+
+nav.header .header__link:nth-of-type(3) a span.inner::after {
+  content: "SHOP";
+}
+
+nav.header .header__link:nth-of-type(4) a span.inner::after {
+  content: "CONTACT";
 }
 
 nav.header .header__link:nth-of-type(1) a {
@@ -61,62 +103,15 @@ nav.header .header__link .menu__toggle {
   z-index: 500;
 }
 
-nav.header .header__link .menu__toggle span {
-}
-
-nav.header .header__link .menu__toggle .group {
-  display: flex;
-  flex-direction: row;
-}
-
-nav.header .header__link .menu__toggle .group .line {
+nav.header .header__link .menu__toggle .line {
   width: 1.5rem;
   height: 1px;
   background-color: var(--clr-text-primary);
   transform-origin: left;
+  animation: revealLine 0.5s 1.75s cubic-bezier(0.85, 0, 0.15, 1) backwards;
 }
 
-nav.header .header__link .menu__toggle:hover .group .line:first-of-type {
-  transform: scaleX(1);
-}
-
-nav.header .header__link .menu__toggle:hover .group .line:last-of-type {
-  transform: scaleX(0);
-  transform-origin: left;
-}
-
-nav.header .header__link .menu__toggle .group .line:first-of-type {
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s 0.15s cubic-bezier(0.85, 0, 0.15, 1);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1.5rem;
-  height: 1px;
-}
-
-nav.header .header__link .menu__toggle .group .line:last-of-type {
-  animation: revealLine 0.5s cubic-bezier(0.85, 0, 0.15, 1) backwards;
-}
-
-nav.header .header__link .menu__toggle .group .line:first-of-type {
-  transform: scaleX(0);
-}
-
-nav.header
-  .header__link
-  .menu__toggle
-  .group:nth-of-type(1)
-  .line:last-of-type {
-  animation-delay: 1.8s;
-}
-
-nav.header
-  .header__link
-  .menu__toggle
-  .group:nth-of-type(2)
-  .line:last-of-type {
+nav.header .header__link .menu__toggle .line:last-of-type {
   animation-delay: 1.8s;
 }
 
