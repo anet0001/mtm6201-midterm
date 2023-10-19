@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>My bakery Website</title>
+  </head>
+  <body>
+    <div class="container--reveal"></div>
+    <header>
+      <nav class="header grid">
+        <div class="logo"></div>
+        <ul class="header__links">
+          <li class="header__link">
+            <span>
+              <a href="#">HOME</a>
+            </span>
+          </li>
+          <li class="header__link">
+            <span>
+              <a href="#">ABOUT</a>
+            </span>
+          </li>
+          <li class="header__link">
+            <span>
+              <a href="#">SHOP</a>
+            </span>
+          </li>
+          <li class="header__link">
+            <span>
+              <a href="/contact">CONTACT</a>
+            </span>
+          </li>
+          <li class="header__link">
+            <input type="checkbox" name="menu-toggle" id="menu-toggle" />
+            <label for="menu-toggle" class="menu__toggle">
+              <span></span>
+              <span></span>
+            </label>
+            <aside class="menu__container"></aside>
+          </li>
+        </ul>
+        <div class="cart">
+          <input type="checkbox" name="cart-toggle" id="cart-toggle" />
+          <label for="cart-toggle" class="cart__toggle">
+            <span>CART</span>
+          </label>
+          <aside class="cart__container"></aside>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <!-- TODO: UPDATE HERO IMAGE -->
+        <div class="hero__image-wrapper">
+          <img class="hero__image" src="images/hero.png" alt="Hero Image" />
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
