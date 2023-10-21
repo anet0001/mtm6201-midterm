@@ -138,6 +138,10 @@ nav.header .logo {
   transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
+.header__link .menu__toggle:hover .line:first-of-type {
+  transform: scaleX(0.5);
+}
+
 .header__link .menu__toggle:hover .line:last-of-type {
   transform: scaleX(1.5);
 }
