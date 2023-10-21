@@ -1,0 +1,10 @@
+p + p {
+  margin-top: calc(var(--layout-spacing) * 0.25);
+}
+
+p + a[data-type="internal"] {
+  margin-top: calc(var(--layout-spacing) * 0.25);
+  display: inline-block;
+  color: var(--clr-text-primary);
+  text-decoration: none;
+}
