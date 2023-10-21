@@ -103,6 +103,8 @@ div.image-container:nth-of-type(3) {
 }
 
 section.founder-quote {
+        font-size: 1.25rem;
+
   color: var(--clr-text-primary);
   margin: calc(var(--layout-spacing) * 3) 0;
 }
@@ -127,6 +129,7 @@ section.large-image img:hover {
 }
 
 section.quote {
+    font-size: 1.25rem;
   color: var(--clr-text-primary);
   margin: calc(var(--layout-spacing) * 3) 0;
 }
