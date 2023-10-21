@@ -35,3 +35,23 @@
     transform: scale(1);
   }
 }
+
+@keyframes scaleDown {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+
