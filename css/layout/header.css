@@ -131,15 +131,15 @@ nav.header .logo {
   background-color: var(--clr-text-primary);
   transform-origin: left;
   animation: revealLine 0.5s 1.75s cubic-bezier(0.85, 0, 0.15, 1) backwards;
+  transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
 .header__link .menu__toggle .line:last-of-type {
   width: 1rem;
-  transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
 .header__link .menu__toggle:hover .line:first-of-type {
-  transform: scaleX(0.5);
+  transform: scaleX(0.66666);
 }
 
 .header__link .menu__toggle:hover .line:last-of-type {

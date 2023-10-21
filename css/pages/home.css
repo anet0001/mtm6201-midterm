@@ -70,7 +70,7 @@ div.image-container .image:first-of-type {
 
 div.image-container .image:first-of-type img {
   transform: scale(var(--_zoomProgress));
-  transition: transform 0.75s .85s cubic-bezier(0.85, 0, 0.15, 1);
+  transition: transform 0.75s 0.5s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
 div.image-container .image:last-of-type {
@@ -120,12 +120,12 @@ section.large-image img {
   margin-bottom: 0;
   aspect-ratio: 3/2;
   object-fit: cover;
-  filter: grayscale(50%);
+  filter: grayscale(50%) brightness(0.75);
   transition: filter 0.3s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
 section.large-image img:hover {
-  filter: grayscale(0);
+  filter: grayscale(0) brightness(0.75);
 }
 
 section.quote {
