@@ -130,6 +130,7 @@ section.large-image img:hover {
 
 section.quote {
   font-size: 1.25rem;
+  font-weight: 300;
   color: var(--clr-text-primary);
   margin: calc(var(--layout-spacing) * 3) 0;
 }
