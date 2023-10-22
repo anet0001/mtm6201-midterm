@@ -103,7 +103,7 @@ div.image-container:nth-of-type(3) {
 }
 
 section.founder-quote {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 
   color: var(--clr-text-primary);
   margin: calc(var(--layout-spacing) * 3) 0;
@@ -129,8 +129,79 @@ section.large-image img:hover {
 }
 
 section.quote {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 300;
   color: var(--clr-text-primary);
   margin: calc(var(--layout-spacing) * 3) 0;
 }
+
+.cta {
+  position: relative;
+  display: block;
+  font-size: 1rem;
+}
+
+.cta--arrow {
+  --_underline-offset: 0.25rem;
+}
+
+.cta--arrow .arrow-wrapper {
+  display: inline-block;
+  position: relative;
+  height: 10px;
+}
+
+.cta--arrow .arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform .3s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.cta--arrow:hover .arrow:first-of-type {
+  transform: scale(0);
+}
+
+.cta--arrow:hover .arrow:last-of-type {
+  transform: scale(1);
+}
+
+.cta--arrow .arrow:first-of-type {
+  transform-origin: top right;
+}
+
+.cta--arrow .arrow:last-of-type {
+  transform: scale(0);
+  transform-origin: bottom left;
+}
+
+.cta::after {
+  content: "";
+  position: absolute;
+  bottom: calc(-1 * var(--_underline-offset));
+  left: 0;
+  /* attributing for the space the arrow takes. */
+  width: calc(100% + 10px);
+  height: 1px;
+  background-color: var(--clr-text-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.cta:hover::after {
+  transform: scaleX(1);
+  transition: transform 0.3s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+/* .cta--arrow {
+}
+
+.cta--arrow::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 3rem;
+  height: 4px;
+  color: red;
+} */

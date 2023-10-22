@@ -15,7 +15,8 @@ html {
 body {
   background-color: var(--clr-background);
   font-family: "Inter", sans-serif;
-  overscroll-behavior: none;x2
+  line-height: 1.14;
+  overscroll-behavior: none;
 }
 
 img {
