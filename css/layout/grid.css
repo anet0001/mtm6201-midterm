@@ -1,6 +1,7 @@
 .grid {
+  --_grid-size: 6;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(var(--_grid-size, 6), 1fr);
 }
 
 .grid--inset-2 {

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Shop</title>
+  </head>
+  <body>
+    <div class="container--reveal"></div>
+    <header>
+      <nav class="header grid">
+        <div class="logo"></div>
+        <ul class="header__links">
+          <li class="header__link">
+            <span class="outer">
+              <a href="index.html"> <span class="inner">HOME</span></a>
+            </span>
+          </li>
+          <li class="header__link">
+            <span class="outer">
+              <a href="shop.html"> <span class="inner">SHOP</span></a>
+            </span>
+          </li>
+          <li class="header__link">
+            <span class="outer">
+              <a href="#"> <span class="inner">CONTACT</span></a>
+            </span>
+          </li>
+          <li class="header__link">
+            <input type="checkbox" name="menu-toggle" id="menu-toggle" />
+            <label for="menu-toggle" class="menu__toggle">
+              <span class="line"></span>
+              <span class="line"></span>
+            </label>
+            <aside class="menu__container">
+              <nav>
+                <ul>
+                  <li>
+                    <a href="index.html">HOME </a>
+                  </li>
+                  <li><a href="about.html">ABOUT</a></li>
+                  <li><a href="#">SHOP</a></li>
+                  <li><a href="#">CONTACT</a></li>
+                </ul>
+              </nav>
+            </aside>
+          </li>
+        </ul>
+        <div class="cart">
+          <input type="checkbox" name="cart-toggle" id="cart-toggle" />
+          <label for="cart-toggle" class="cart__toggle">
+            <span>CART</span>
+          </label>
+          <aside class="cart__container">
+            <div class="img-container">
+              <img src="images/empty-cart.png" alt="Empty Cart" />
+            </div>
+          </aside>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="product-grid grid">
+        <article class="product">
+          <div class="product__img-container">
+            <img src="images/cupcake-1.png" alt="Cupcake" />
+          </div>
+          <div class="product__info__wrapper">
+            <div class="product__info">
+              <h3 class="product__name">Chocolate Cupcake</h3>
+              <p class="product__price">$2.99</p>
+            </div>
+            <button href="#" class="cta cta--arrow" data-type="internal">
+              Add to Cart
+              <span class="arrow-wrapper"
+                ><svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__img-container">
+            <img src="images/cupcake-1.png" alt="Cupcake" />
+          </div>
+          <div class="product__info__wrapper">
+            <div class="product__info">
+              <h3 class="product__name">Chocolate Cupcake</h3>
+              <p class="product__price">$2.99</p>
+            </div>
+            <button href="#" class="cta cta--arrow" data-type="internal">
+              Add to Cart
+              <span class="arrow-wrapper"
+                ><svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__img-container">
+            <img src="images/cupcake-1.png" alt="Cupcake" />
+          </div>
+          <div class="product__info__wrapper">
+            <div class="product__info">
+              <h3 class="product__name">Chocolate Cupcake</h3>
+              <p class="product__price">$2.99</p>
+            </div>
+            <button href="#" class="cta cta--arrow" data-type="internal">
+              Add to Cart
+              <span class="arrow-wrapper"
+                ><svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__img-container">
+            <img src="images/cupcake-1.png" alt="Cupcake" />
+          </div>
+          <div class="product__info__wrapper">
+            <div class="product__info">
+              <h3 class="product__name">Chocolate Cupcake</h3>
+              <p class="product__price">$2.99</p>
+            </div>
+            <button href="#" class="cta cta--arrow" data-type="internal">
+              Add to Cart
+              <span class="arrow-wrapper"
+                ><svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__img-container">
+            <img src="images/cupcake-1.png" alt="Cupcake" />
+          </div>
+          <div class="product__info__wrapper">
+            <div class="product__info">
+              <h3 class="product__name">Chocolate Cupcake</h3>
+              <p class="product__price">$2.99</p>
+            </div>
+            <button href="#" class="cta cta--arrow" data-type="internal">
+              Add to Cart
+              <span class="arrow-wrapper"
+                ><svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__img-container">
+            <img src="images/cupcake-1.png" alt="Cupcake" />
+          </div>
+          <div class="product__info__wrapper">
+            <div class="product__info">
+              <h3 class="product__name">Chocolate Cupcake</h3>
+              <p class="product__price">$2.99</p>
+            </div>
+            <button href="#" class="cta cta--arrow" data-type="internal">
+              Add to Cart
+              <span class="arrow-wrapper"
+                ><svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__img-container">
+            <img src="images/cupcake-1.png" alt="Cupcake" />
+          </div>
+          <div class="product__info__wrapper">
+            <div class="product__info">
+              <h3 class="product__name">Chocolate Cupcake</h3>
+              <p class="product__price">$2.99</p>
+            </div>
+            <button href="#" class="cta cta--arrow" data-type="internal">
+              Add to Cart
+              <span class="arrow-wrapper"
+                ><svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__img-container">
+            <img src="images/cupcake-1.png" alt="Cupcake" />
+          </div>
+          <div class="product__info__wrapper">
+            <div class="product__info">
+              <h3 class="product__name">Chocolate Cupcake</h3>
+              <p class="product__price">$2.99</p>
+            </div>
+            <button href="#" class="cta cta--arrow" data-type="internal">
+              Add to Cart
+              <span class="arrow-wrapper"
+                ><svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__img-container">
+            <img src="images/cupcake-1.png" alt="Cupcake" />
+          </div>
+          <div class="product__info__wrapper">
+            <div class="product__info">
+              <h3 class="product__name">Chocolate Cupcake</h3>
+              <p class="product__price">$2.99</p>
+            </div>
+            <button href="#" class="cta cta--arrow" data-type="internal">
+              Add to Cart
+              <span class="arrow-wrapper"
+                ><svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__img-container">
+            <img src="images/cupcake-1.png" alt="Cupcake" />
+          </div>
+          <div class="product__info__wrapper">
+            <div class="product__info">
+              <h3 class="product__name">Chocolate Cupcake</h3>
+              <p class="product__price">$2.99</p>
+            </div>
+            <button href="#" class="cta cta--arrow" data-type="internal">
+              Add to Cart
+              <span class="arrow-wrapper"
+                ><svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__img-container">
+            <img src="images/cupcake-1.png" alt="Cupcake" />
+          </div>
+          <div class="product__info__wrapper">
+            <div class="product__info">
+              <h3 class="product__name">Chocolate Cupcake</h3>
+              <p class="product__price">$2.99</p>
+            </div>
+            <button href="#" class="cta cta--arrow" data-type="internal">
+              Add to Cart
+              <span class="arrow-wrapper"
+                ><svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__img-container">
+            <img src="images/cupcake-1.png" alt="Cupcake" />
+          </div>
+          <div class="product__info__wrapper">
+            <div class="product__info">
+              <h3 class="product__name">Chocolate Cupcake</h3>
+              <p class="product__price">$2.99</p>
+            </div>
+            <button href="#" class="cta cta--arrow" data-type="internal">
+              Add to Cart
+              <span class="arrow-wrapper"
+                ><svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow"
+                >
+                  <path
+                    d="M8.49875 0.964653C8.47923 0.689201 8.2401 0.48173 7.96465 0.501251L3.47591 0.819378C3.20046 0.8389 2.99299 1.07802 3.01251 1.35347C3.03203 1.62893 3.27115 1.8364 3.54661 1.81688L7.5366 1.5341L7.81938 5.52409C7.8389 5.79954 8.07802 6.00701 8.35347 5.98749C8.62892 5.96797 8.8364 5.72885 8.81688 5.45339L8.49875 0.964653ZM1.01853 9.80949L8.37766 1.32767L7.62234 0.672326L0.263206 9.15414L1.01853 9.80949Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
