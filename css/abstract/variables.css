@@ -1,10 +1,18 @@
+/* MY CUSTOM CSS PROPERTIES */
+
 :root {
   --clr-background: #121212;
   --clr-brand-primary: #1e1e1e;
   --clr-text-primary: #fff;
   --layout-spacing: 2rem;
-  --max-container-width: 1200px;
-  --max-cart-width: 450px;
-  --max-menu-height: 450px;
-  --menu-spacing: 10rem;
+  --max-container-width: 1400px;
+  --max-menu-height: 400px;
+  --menu-spacing: 6rem;
+  --section-spacing: 9rem;
+}
+
+@media (max-width: 390px) {
+  :root {
+    --section-spacing: 6rem;
+  }
 }

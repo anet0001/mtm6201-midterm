@@ -1,6 +1,7 @@
 section.hero {
 }
 
+/* IMAGE WRAPPER WITH AN ASPECT RATIO OF 16/9 */
 section.hero .hero__image-wrapper {
   position: relative;
   width: 100%;
@@ -8,86 +9,62 @@ section.hero .hero__image-wrapper {
   overflow: hidden;
 }
 
+/* HERO WRAPPER WITH REDUCED BRIGHTNESS TO MAKE THE NAVIGATION LINKS TEXT MORE VISIBLE */
 section.hero .hero__image-wrapper img {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
   filter: brightness(0.8);
+  /* ZOOM OUT ANIMATION ON IMAGE THAT STARTS AFTER THE PAGE COVER ANIMATION IS DONE */
   animation: zoomOut 1s 1.75s cubic-bezier(0.85, 0, 0.15, 1) backwards;
 }
 
 section.image-cards {
   gap: 2rem;
-  /* TODO: FIX MAX WIDTH */
-  width: min(100% - calc(var(--layout-spacing) * 2), 2000px);
-  margin: 3rem auto;
+  /* SETTING MAX WIDTH TO THE MAX CONTAINER WIDTH CSS PROPERTY AND IDEAL WIDTH TO BE 100% OF THE CONTAINER - 2REM(I DO THIS WHEN I WANT CONSISTENT SPACING ON THE SIDES FOR EVERYTHING WHEN ITS ON MOBILE - THAT WAY I WRITE LESS MEDIA QUERIES) */
+  width: min(
+    100% - calc(var(--layout-spacing) * 2),
+    var(--max-container-width)
+  );
+  margin: var(--layout-spacing) auto;
 }
 
 div.image-container {
   position: relative;
   grid-column: span 2;
+  /* SETTING THE ASPECT RATIO OF THE IMAGE CONTAINER */
   aspect-ratio: 3/4;
   overflow: hidden;
 }
 
-div.image-container:hover .image:first-of-type {
-  --_scaleProgress: 0;
-  --_zoomProgress: 1.1;
-}
-
-div.image-container:hover .image:last-of-type {
-  --_scaleProgress: 1;
-}
-
-div.image-container .image {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  transition: transform 0.75s 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-div.image-container .image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  filter: brightness(0.8);
-}
-
+/* SETTING THIS CONTAINER TO BE OUT OF VIEW BY DEFAULT BY SETTING THE TRANSLATE PROGRESS TO 100% */
+/* FOR TRANSLATE PROGRESS - 0 WOULD BE IN VIEW AND 1 WOULD BE TRANSLATEY(100%) */
+/* FOR ZOOM PROGRESS - 1 WOULD BE SCALE(1) AND 1.1 WOULD BE SCALE(1.1) */
 div.image-container .image:first-of-type {
-  --_scaleProgress: 1;
+  --_translateProgress: 1;
   --_zoomProgress: 1;
   top: 0;
   transform-origin: bottom;
-  transform: translateY(calc(var(--_scaleProgress) * 100%));
+  transform: translateY(calc(var(--_translateProgress) * 100%));
 }
 
+/* SETTING THIS IMAGE TO BE 1 */
 div.image-container .image:first-of-type img {
   transform: scale(var(--_zoomProgress));
   transition: transform 0.75s 0.5s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
+/* SETTING THIS IMAGE CONTAINER TO BE INVIEW BY DEFAULT  */
+
 div.image-container .image:last-of-type {
-  --_scaleProgress: 0;
+  --_translateProgress: 0;
   bottom: 0;
   transform-origin: top;
-  transform: translateY(calc(var(--_scaleProgress) * -100%));
+  transform: translateY(calc(var(--_translateProgress) * -100%));
 }
 
-div.image-container figure:last-of-type {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: scaleY(0);
-  transform-origin: bottom;
-  overflow: hidden;
-}
+/* SETTING DIFFERENT ASPECT RATIOS ON THE IMAGE CONTAINERS */
 
 div.image-container:nth-of-type(1) {
   aspect-ratio: 0.93;
@@ -100,19 +77,52 @@ div.image-container:nth-of-type(3) {
   aspect-ratio: 1.21;
 }
 
+/* WHEN THE CONTAINER IS HOVERED THE IMAGE-CONTAINER TRANSLATES INTO VIEW AND THE IMAGE IN IT SCALE UP */
+div.image-container:hover .image:first-of-type {
+  --_translateProgress: 0;
+  --_zoomProgress: 1.1;
+}
+
+/* TRANSLATING THE OTHER IMAGE CONTAINER OUT OF VIEW AT THE SAME TIME SO THEY APPEAR LIKE THEY ARE ON A TRACK */
+div.image-container:hover .image:last-of-type {
+  --_translateProgress: 1;
+}
+
+/* MAKING THE IMAGE FILL THE CONTAINER */
+div.image-container .image {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.75s 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+div.image-container .image img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* TURNING DOWN IMAGE BRIGHTNESS */
+  filter: brightness(0.8);
+}
+
 section.founder-quote {
   font-size: 1.15rem;
 
   color: var(--clr-text-primary);
-  margin: calc(var(--layout-spacing) * 3) 0;
+  /* SETTING THE SPACING BETWEEN THIS AND OTHER SECTIONS USING A CSS CUSTOM PROPERTY */
+  margin: var(--section-spacing) 0;
 }
 
 section.founder-quote article {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  grid-column: 4 / span 2;
 }
 
+/* SETTING A GRAYSCALE & BRIGHTNESS EFFECT ON THE IMAGE */
 section.large-image img {
   width: 100%;
   margin-bottom: 0;
@@ -121,6 +131,7 @@ section.large-image img {
   transition: filter 0.3s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
+/* CHANGING THE GRYSACLE ON HOVER */
 section.large-image img:hover {
   filter: grayscale(0) brightness(0.95);
 }
@@ -129,7 +140,11 @@ section.quote {
   font-size: 1.15rem;
   font-weight: 300;
   color: var(--clr-text-primary);
-  margin: calc(var(--layout-spacing) * 3) 0;
+  margin: var(--section-spacing) 0;
+}
+
+section.quote article {
+  grid-column: 2 / span 2;
 }
 
 .cta {
@@ -138,6 +153,7 @@ section.quote {
   font-size: 1rem;
 }
 
+/* SETTIN THE DISTANCE BETWEEN THE UNDERLINE(AFTER PSEUDO ELEMENT) AND THE BOTTOM*/
 .cta--arrow {
   --_underline-offset: 0.25rem;
 }
@@ -148,6 +164,7 @@ section.quote {
   height: 10px;
 }
 
+/* LAYERING THE TWO ARROWS ON TOP OF EACH OTHER */
 .cta--arrow .arrow {
   position: absolute;
   top: 0;
@@ -155,24 +172,29 @@ section.quote {
   transition: transform 0.3s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
-.cta--arrow:hover .arrow:first-of-type {
-  transform: scale(0);
-}
-
-.cta--arrow:hover .arrow:last-of-type {
-  transform: scale(1);
-}
-
+/* SETTING THIS ARROW TO TRANSFORM FROM(TO IN THIS CASE) THE TOP RIGHT */
 .cta--arrow .arrow:first-of-type {
   transform-origin: top right;
 }
 
+/* SETTING THIS ARROW TO TRANSFORM FROM THE BOTTOM LEFT */
 .cta--arrow .arrow:last-of-type {
   transform: scale(0);
   transform-origin: bottom left;
 }
 
-.cta::after {
+/* SETTING THIS ARROW TO BE SCALED DOWN ON HOVER */
+.cta--arrow:hover .arrow:first-of-type {
+  transform: scale(0);
+}
+
+/* SETTING THIS ARROW TO BE SCALED UP ON HOVER */
+.cta--arrow:hover .arrow:last-of-type {
+  transform: scale(1);
+}
+
+/* UNDERLINES FOR THE CTA USING THE BEFORE AND AFTER PSEUDO ELEMENTS */
+.cta--arrow::after {
   content: "";
   position: absolute;
   bottom: calc(-1 * var(--_underline-offset));
@@ -186,7 +208,8 @@ section.quote {
   transition: transform 0.3s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
-.cta::before {
+/* SCALED DOWN BY DEFAULT */
+.cta--arrow::before {
   content: "";
   position: absolute;
   bottom: calc(-1 * var(--_underline-offset));
@@ -197,26 +220,27 @@ section.quote {
   background-color: var(--clr-text-primary);
   transform: scaleX(0);
   transform-origin: left;
+  /* TINY DELAY SO THERE IS SPACE BETWEEN THEIR MOVEMENTS */
   transition: transform 0.3s 50ms cubic-bezier(0.85, 0, 0.15, 1);
 }
 
-.cta:hover::after {
+.cta--arrow:hover::after {
   transform: scaleX(0);
 }
 
-.cta:hover::before {
+/* SCALE UP AND SCALE DOWN THE PREVIOUS ONE ON HOVER */
+.cta--arrow:hover::before {
   transform: scaleX(1);
 }
 
-/* .cta--arrow {
-}
+@media screen and (max-width: 768px) {
+  section.quote article,
+  section.founder-quote article {
+    grid-column: 2 / calc(var(--_grid-size));
+  }
 
-.cta--arrow::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 3rem;
-  height: 4px;
-  color: red;
-} */
+  div.image-container {
+    grid-column: span var(--_grid-size);
+    aspect-ratio: 1/1;
+  }
+}

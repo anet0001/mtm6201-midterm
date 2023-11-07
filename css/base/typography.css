@@ -1,6 +1,10 @@
+/* ADDING MARGIN TOP TO ALL PARAGRAPHS PRECEEDED BY A PARAGRAPH  */
+
 p + p {
   margin-top: calc(var(--layout-spacing) * 0.25);
 }
+
+/* STYLING LINKS WITH A DATA ATTRIBUTE - DATA-TYPE WITH A VALUE OF INTERNAL - (MOSTLY THE CTAS ON MY HOME PAGE)  */
 
 p + a[data-type="internal"] {
   margin-top: calc(var(--layout-spacing) * 0.25);

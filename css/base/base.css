@@ -1,4 +1,4 @@
-@import "../abstract/variables.css";
+/* CSS RESET */
 
 *,
 *::before,
@@ -16,10 +16,27 @@ body {
   background-color: var(--clr-background);
   font-family: "Inter", sans-serif;
   line-height: 1.14;
+  /* PREVENTS OVERSCROLL BEHAVIOR ON MAC AND IOS DEVICES */
   overscroll-behavior: none;
 }
 
 img {
   width: 100%;
+  height: auto;
   object-fit: cover;
+  /* REMOVES SPACING THAT APPEARS BELOW IMAGES - (USUALLY WHEN THEY ARE POSITION ABSOLUTELY) */
+  vertical-align: middle;
+}
+
+/* RESET FOR ALL MY LINKS AND LISTS */
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+ul {
+  list-style: none;
 }

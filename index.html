@@ -10,79 +10,143 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <title>Bakery Website</title>
+    <title>Bakery</title>
   </head>
   <body>
     <div class="container--reveal"></div>
     <header>
       <nav class="header grid">
         <div class="logo"></div>
-        <ul class="header__links">
+        <ul class="header__links header__links--desktop">
           <li class="header__link">
             <span class="outer">
-              <a href="index.html"> <span class="inner">HOME</span></a>
+              <a href="index.html" aria-label="Go to Home Page">
+                <span class="inner">HOME</span></a
+              >
             </span>
           </li>
           <li class="header__link">
             <span class="outer">
-              <a href="shop.html"> <span class="inner">SHOP</span></a>
+              <a href="shop.html" aria-label="Go to Shop Page">
+                <span class="inner">SHOP</span></a
+              >
             </span>
           </li>
           <li class="header__link">
             <span class="outer">
-              <a href="#"> <span class="inner">CONTACT</span></a>
+              <a href="contact.html" aria-label="Go to Contact Page">
+                <span class="inner">CONTACT</span></a
+              >
             </span>
-          </li>
-          <li class="header__link">
-            <input type="checkbox" name="menu-toggle" id="menu-toggle" />
-            <label for="menu-toggle" class="menu__toggle">
-              <span class="line"></span>
-              <span class="line"></span>
-            </label>
-            <aside class="menu__container">
-              <nav>
-                <ul>
-                  <li>
-                    <a href="index.html">HOME </a>
-                  </li>
-                  <li><a href="#">ABOUT</a></li>
-                  <li><a href="shop.html">SHOP</a></li>
-                  <li><a href="#">CONTACT</a></li>
-                </ul>
-              </nav>
-            </aside>
           </li>
         </ul>
-        <div class="cart">
-          <input type="checkbox" name="cart-toggle" id="cart-toggle" />
-          <label for="cart-toggle" class="cart__toggle">
-            <span>CART</span>
+
+        <div class="mobile__menu">
+          <input
+            aria-label="Open Navigation Menu"
+            type="checkbox"
+            name="menu-toggle"
+            id="menu-toggle"
+          />
+          <label
+            aria-label="Open Navigation Menu"
+            for="menu-toggle"
+            class="menu__toggle"
+          >
+            <span class="line"></span>
+            <span class="line"></span>
           </label>
-          <aside class="cart__container">
-            <div class="img-container">
-              <img src="images/empty-cart.png" alt="Empty Cart" />
+          <aside class="menu__container grid">
+            <nav>
+              <ul>
+                <li>
+                  <a href="index.html" aria-label="Go to Home Page"
+                    ><span>HOME</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" aria-label="Go to About Page"
+                    ><span>ABOUT</span></a
+                  >
+                </li>
+                <li>
+                  <a href="shop.html" aria-label="Go to Shop Page"
+                    ><span>SHOP</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" aria-label="Go to Contact Page"
+                    ><span>CONTACT</span></a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <div class="extended-links">
+              <div class="group">
+                <ul>
+                  <li>FAQS</li>
+                  <li>BLOG</li>
+                  <li>CONTACT</li>
+                </ul>
+              </div>
+              <div class="group">
+                <ul>
+                  <li>INSTAGRAM</li>
+                  <li>FACEBOOK</li>
+                </ul>
+              </div>
+              <div class="group">
+                <ul>
+                  <li>info@ourbakery.com</li>
+                </ul>
+              </div>
             </div>
           </aside>
         </div>
       </nav>
     </header>
-    <!-- TODO: LIMIT CONTAINER SIZE AND HAVE HERO IMAGE EXTEND BEYOND THE CONTAINER -->
     <main>
       <section class="hero">
-        <!-- TODO: UPDATE HERO IMAGE -->
         <div class="hero__image-wrapper">
-          <img class="hero__image" src="images/hero.png" alt="Hero Image" />
+          <picture>
+            <source
+              media="(max-width: 390px)"
+              srcset="images/hero_320.png 320w"
+            />
+
+            <source
+              media="(max-width: 768px)"
+              srcset="images/hero_640.png 640w"
+            />
+
+            <source
+              media="(min-width: 1024px)"
+              srcset="images/hero_1920.png 1920w"
+            />
+
+            <img
+              class="hero__image"
+              src="images/hero_640.png"
+              alt="Bakery Hero Image"
+            />
+          </picture>
         </div>
+
+        <div class="hero__content container"></div>
       </section>
-      <section class="grid quote">
-        <article class="grid--inset-2">
+      <section class="grid quote container">
+        <article>
           <p>
             Lorem ipsum dolor sit amet elit, sed do eiusmod tempor incididunt ut
             labe et dolore magna aliqua enim ad minim veniam, quis nostrud
             ullamco laboris nisi ut commodo consequat.
           </p>
-          <!-- TODO: REWORK UNDERLINE TO DOUBLE FILL -->
-          <a href="#" class="cta cta--arrow" data-type="internal">
+          <a
+            aria-label="Read More About Our Business"
+            href="#"
+            class="cta cta--arrow"
+            data-type="internal"
+          >
             Read More
             <span class="arrow-wrapper"
               ><svg
@@ -115,40 +179,98 @@
           </a>
         </article>
       </section>
-      <section class="image-cards grid">
+      <!-- USING ARIA HIDDEN HERE BECAUSE THE IMAGE GRID IS PURELY DECORATIVE AND PROVIDES NO ADDITIONAL CONTEXT/INFORMATION -->
+      <section class="image-cards grid" aria-hidden="true">
         <div class="image-container">
-          <figure class="image">
-            <img src="images/image-1.png" />
-            <figcaption></figcaption>
-          </figure>
-          <figure class="image">
-            <img src="images/image-2.png" />
-            <figcaption></figcaption>
-          </figure>
+          <picture class="image">
+            <source
+              media="(max-width: 390px)"
+              srcset="images/image-1_320.png 320w"
+            />
+
+            <source
+              media="(min-width: 768px)"
+              srcset="images/image-1_640.png 640w"
+            />
+
+            <img src="images/image-1_640.png" alt="" />
+          </picture>
+
+          <picture class="image">
+            <source
+              media="(max-width: 390px)"
+              srcset="images/image-2_320.png 320w"
+            />
+
+            <source
+              media="(min-width: 768px)"
+              srcset="images/image-2_640.png 640w"
+            />
+
+            <img src="images/image-2_640.png" alt="Bakery Product Gallery" />
+          </picture>
         </div>
         <div class="image-container">
-          <figure class="image">
-            <img src="images/image-4.png" />
-            <figcaption></figcaption>
-          </figure>
-          <figure class="image">
-            <img src="images/image-3.png" />
-            <figcaption></figcaption>
-          </figure>
+          <picture class="image">
+            <source
+              media="(max-width: 390px)"
+              srcset="images/image-3_320.png 320w"
+            />
+
+            <source
+              media="(min-width: 768px)"
+              srcset="images/image-3_640.png 640w"
+            />
+
+            <img src="images/image-3_640.png" alt="Bakery Product Gallery" />
+          </picture>
+
+          <picture class="image">
+            <source
+              media="(max-width: 390px)"
+              srcset="images/image-4_320.png 320w"
+            />
+
+            <source
+              media="(min-width: 768px)"
+              srcset="images/image-4_640.png 640w"
+            />
+
+            <img src="images/image-4_640.png" alt="Bakery Product Gallery" />
+          </picture>
         </div>
         <div class="image-container">
-          <figure class="image">
-            <img src="images/image-5.png" />
-            <figcaption></figcaption>
-          </figure>
-          <figure class="image">
-            <img src="images/image-6.png" />
-            <figcaption></figcaption>
-          </figure>
+          <picture class="image">
+            <source
+              media="(max-width: 390px)"
+              srcset="images/image-5_320.png 320w"
+            />
+
+            <source
+              media="(min-width: 768px)"
+              srcset="images/image-5_640.png 640w"
+            />
+
+            <img src="images/image-5_640.png" alt="" />
+          </picture>
+
+          <picture class="image">
+            <source
+              media="(max-width: 390px)"
+              srcset="images/image-6_320.png 320w"
+            />
+
+            <source
+              media="(min-width: 768px)"
+              srcset="images/image-6_640.png 640w"
+            />
+
+            <img src="images/image-6_640.png" alt="" />
+          </picture>
         </div>
       </section>
-      <section class="grid founder-quote">
-        <article class="grid--inset-4">
+      <section class="grid founder-quote container">
+        <article>
           <blockquote>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labe et dolore magna aliqua. Ut enim ad
@@ -159,10 +281,27 @@
         </article>
       </section>
       <section class="large-image">
-        <img src="images/image-7.png" alt="" />
+        <picture>
+          <source
+            media="(max-width: 390px)"
+            srcset="images/founder-banner_320.png 320w"
+          />
+
+          <source
+            media="(max-width: 768px)"
+            srcset="images/founder-banner_640.png 640w"
+          />
+
+          <source
+            media="(min-width: 1024px)"
+            srcset="images/founder-banner_1920.png 1920w"
+          />
+
+          <img src="images/founder-banner_640.png" alt="Bakery Founder" />
+        </picture>
       </section>
       <section class="grid quote">
-        <article class="grid--inset-2">
+        <article>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labe et dolore magna aliqua. Ut enim ad
@@ -203,5 +342,19 @@
         </article>
       </section>
     </main>
+    <footer>
+      <ul>
+        <li>
+          <a href="">HOME</a>
+        </li>
+        <li>
+          <a href="">SHOP</a>
+        </li>
+        <li>
+          <a href="">CONTACT</a>
+        </li>
+      </ul>
+      <small>&copy; 2023 All Rights Reserved</small>
+    </footer>
   </body>
 </html>

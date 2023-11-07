@@ -1,5 +1,6 @@
+/* HEADER WITH POSITION ABSOLUTE SO IT STAYS AT THE TOP OF THE PAGE */
 nav.header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -12,6 +13,7 @@ nav.header .logo {
 }
 
 .header__links {
+  /* PIXEL VALUE OF THE LINK FROM FIGMA */
   --_pixel-value: 50;
   grid-column: 4 / span 2;
   justify-self: end;
@@ -19,16 +21,20 @@ nav.header .logo {
   display: flex;
   flex-direction: row;
   align-items: center;
+  /* CONVERTING THE PIXEL VALUE TO REM */
   gap: calc(var(--_pixel-value) / 16 * 1rem);
 }
 
 .header__link span.outer {
+  /* DEFAULT SCALE VALUE FOR THE LINK UNDERLINE THAT THE AFTERPSEUDO ELEMENT WILL INHERIT */
   --scale-x: 0;
   display: inline-block;
   position: relative;
+  /* SETTING OVERFLOW HIDDEN SO IT HIDES ANYTHING OUT OF VIEW */
   overflow: hidden;
 }
 
+/* SETUP FOR THE ANIMATED TEXT UNDERLINE */
 .header__link span.outer::after {
   content: "";
   position: absolute;
@@ -44,16 +50,25 @@ nav.header .logo {
 
 .header__link span.outer:has(a:hover),
 .header__link span.outer:has(a:focus-visible) {
+  /* SCALE TO 1 (100%) WHEN THE SPAN HAS A CHILD LINK WITH A STATE OF HOVER */
+  /* I USED FOCUS VISIBLE BECAUSE THE BEHAVIOUR WAS JANKY WITH JUST FOCUS(BECAUSE THAT ALSO TRIGGERS WITH THE MOUSE AND NOT JUST TAB) */
   --scale-x: 1;
 }
 
-.header__link a {
-  display: inline-block;
-  color: var(--clr-text-primary);
+/* SHARED STYLES FOR THE HEADER LINK WRAPPERS AND THE MOBILE MENU WRAPPER */
+.header__link,
+.mobile__menu {
   text-decoration: none;
+  color: var(--clr-text-primary);
   font-size: 0.85rem;
   font-weight: 300;
-  animation: fadeIn 0.5s cubic-bezier(0.85, 0, 0.15, 1) backwards;
+}
+
+/* SETTING HEADER LINK TO INLINE BLOCK SO THAT THE TRANSLATE ON THE SLIDE IN ANIMATION WORKS */
+.header__link a {
+  display: inline-block;
+  /* SLIDE IN ANIMATION WHEN THE PAGE LOADS */
+  animation: slideIn 0.5s cubic-bezier(0.85, 0, 0.15, 1) backwards;
 }
 
 .header__link a span {
@@ -64,25 +79,31 @@ nav.header .logo {
   vertical-align: middle;
 }
 
+/* SET THE SPAN.INNER AS THE RELATIVE CONTAINER FOR THE TRANSFORMS OF THE AFTER PSEUDO ELEMENT */
 .header__link a span.inner {
   position: relative;
 }
 
+/* TRANSLATE LINK TEXT OUT OF VIEW ON HOVER - +1px BECAUSE SOMETIMES DEPENDING ON WHAT LETTERS ARE IN THE LINK, PART OF THE TEXT WAS STILL DISPLAYED  */
 .header__link a:hover span.inner,
 .header__link a:focus-visible span.inner {
   transform: translateY(calc(-100% - 1px));
 }
 
+/* TRANSLATE LINK AFTER PSEUDO ELEMENT INTO VIEW ON HOVER  */
 .header__link a:hover span.inner::after,
 .header__link a:focus-visible span.inner::after {
   transform: translateY(0);
 }
 
+/* SETTING THE INITIAL POSITION OF THE AFTER PSEUDO ELEMENT TO BE JUST BELOW THE LINK */
 .header__link a span.inner::after {
   position: absolute;
   top: calc(100% + 1px);
   left: 0;
 }
+
+/* SETTING THE TEXT CONTENT FOR THE LINKS AFTER PSEUDO ELEMENTS */
 
 .header__link:nth-of-type(1) a span.inner::after {
   content: "HOME";
@@ -95,6 +116,9 @@ nav.header .logo {
 .header__link:nth-of-type(3) a span.inner::after {
   content: "CONTACT";
 }
+
+/* SETTING ANIMATION DELAY FOR EACH LINK SO IT STARTS AFTER THE PAGE COVER ANIMATION IS DONE */
+/* ADDING A .05s DIFFERENCE BETWEEN EACH ITEM SO THEY ARE STAGGERED */
 
 .header__link:nth-of-type(1) a {
   animation-delay: 1.5s;
@@ -112,170 +136,213 @@ nav.header .logo {
   animation-delay: 1.65s;
 }
 
-.header__link .menu__toggle {
+.mobile__menu .menu__toggle {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0.5rem 0;
   gap: 0.25rem;
+  margin-left: 2rem;
   z-index: 500;
 }
 
-.header__link .menu__toggle .line {
+/* STYLES FOR THE SPANS THAT REPRESENT THE MOBILE MENU */
+
+.mobile__menu .menu__toggle .line {
   width: 1.5rem;
   height: 1px;
   background-color: var(--clr-text-primary);
   transform-origin: left;
+  /* A REVEAL ANIMATION FOR THE LINES WITH A DELAY SO IT STARTS AFTER THE PAGE REVEAL AND A LITTLE AFTER THE LINKS REVEAL ANIMATION STARTS */
   animation: revealLine 0.5s 1.75s cubic-bezier(0.85, 0, 0.15, 1) backwards;
   transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
-.header__link .menu__toggle .line:last-of-type {
+/* SETTING THE LAST (SECOND) SPAN TO BE SHORTER THAN THE FIRST */
+
+.mobile__menu .menu__toggle .line:last-of-type {
   width: 1rem;
 }
 
-.header__link .menu__toggle:hover .line:first-of-type {
+/* SCALING THE WIDTH OF THE SPAN TO BE 1REM FROM 1.5REM */
+/* TYPICALLY USE SCALE INSTEAD OF WIDTH BECAUSE OF PERFORMANCE ISSUES AND LAYOUT SHIFT ISSUES */
+/* THOSE ISSUES ARE IRRELEVANT IN THIS CASE BECUASE ITS SUCH A SMALL DETAIL BUT I STILL STUCK WITH IT */
+
+.mobile__menu .menu__toggle:hover .line:first-of-type {
   transform: scaleX(0.66666);
 }
 
-.header__link .menu__toggle:hover .line:last-of-type {
+.mobile__menu .menu__toggle:hover .line:last-of-type {
   transform: scaleX(1.5);
 }
 
-.header__link .menu__toggle .line:last-of-type {
+/* AN ADDITIONAL DELAY OF .05 TO CREATE A STAGGER EFFECT BETWEEN THE TWO SPANS */
+.mobile__menu .menu__toggle .line:last-of-type {
   animation-delay: 1.8s;
 }
 
-.header__link label:hover {
+/* CURSOR POINTER ON HOVER FOR THE LABEL */
+.mobile__menu label:hover {
   cursor: pointer;
 }
 
-.header__link input:focus-visible + label {
-  outline: 1px dotted red;
+/* SINCE THE FOCUS APPLIES TO THE INPUT WHEN TABBED ON, THIS WAS THE ONLY WAY I COULD THINK OF TO ADD A FOCUS STATE TO THE LABEL ITSELF */
+.mobile__menu input:focus-visible + label {
+  outline: 2px dotted red;
 }
 
-.header__link #menu-toggle {
+/* HIDING THE CHECKBOX BEHIND THE LABEL BY POSITIONING IT ABSOLUTELY */
+/* I USED OPACITY INSTEAD OF DISPLAY:NONE OR VISIBILITY:HIDDEN BECAUSE I WANTED TO STILL HAVE FOCUS STATES ON THE CHECKBOX ITSELF TO MAKE THE MENU KEYBOARD ACCESSIBLE */
+.mobile__menu #menu-toggle {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
 
-.header__link .menu__toggle {
+/* MAKING SURE THAT THE MENU TOGGLE APPEARS ON THE TOP OF THE OFF-CANVAS MENU */
+.mobile__menu .menu__toggle {
   position: relative;
   z-index: 600;
 }
 
-.header__link .menu__container {
-  position: fixed;
+.mobile__menu .menu__container {
+  position: absolute;
   right: 0;
   top: 0;
   transform-origin: top;
   transition: transform 0.7s cubic-bezier(0.83, 0, 0.17, 1);
   width: 100vw;
-  height: min(100%, var(--max-menu-height));
   background-color: var(--clr-brand-primary);
   z-index: 500;
+  /* TAKING THE MENU OFF-CANVAS */
   transform: translateY(-100%);
+
+  padding: 6rem 4rem;
+  /* REDEFINING GRID SIZE AND GAP SIZE */
+  --_grid-size: 12;
+  --_grid-gap: 1rem;
+  grid-template-areas: ". . . . . . .  links links extended-links extended-links .";
 }
 
-.header__link #menu-toggle:checked ~ .menu__container {
+/* BRINGING THE MENU BACK INTO VIEW WHEN THE MENU TOGGLE IS CHECKED */
+.mobile__menu #menu-toggle:checked ~ .menu__container {
   transform: translateY(0);
 }
 
-/* .header__link #menu-toggle:checked ~ .menu__toggle svg path:nth-of-type(1) {
-  transform: rotate(45deg);
-} */
-
-.cart {
-  grid-column: 6 / -1;
-  align-self: center;
-  justify-self: end;
+/* OVERFLOW HIDDEN SO THAT ANY CHILD ELEMENT OUT OF VIEW IS HIDDEN */
+.menu__container nav ul li {
   overflow: hidden;
+  padding: 0.15rem;
 }
 
-/* adding focus state to labels since they are not there by default. */
-.cart input:focus-visible + label {
-  outline: 1px dotted red;
-}
-
-.cart__toggle {
-  position: relative;
+/* MAKING THE SPAN IN THE LINK INLINE BLOCK SO TRANSLATE ANIMATIONS CAN WORK */
+.menu__container nav ul li a {
   display: inline-block;
-  overflow: hidden;
-  z-index: 500;
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: var(--clr-text-primary);
-  animation: fadeIn 0.5s 1.8s cubic-bezier(0.85, 0, 0.15, 1) backwards;
 }
 
-.cart__toggle span {
+.menu__container nav ul li a:hover span,
+.menu__container nav ul li a:focus-visible span {
+  text-decoration: underline;
 }
 
-.cart__toggle:hover {
-  cursor: pointer;
+/* CHECK IF THE MENU IS TOGGLED THEN ANIMATE IN THE LINKS */
+.mobile__menu #menu-toggle:checked ~ .menu__container nav ul li a {
+  animation: slideIn 0.5s var(--_delay, 0.75s) cubic-bezier(0.85, 0, 0.15, 1)
+    backwards;
+}
+/* TODO: REDUCE SPECIFICITY AND ADD MORE CLASSNAMES */
+/* DELAY FOR ALL THE LINKS TO ADD A STAGGERED EFFECT */
+.menu__container nav ul li:nth-of-type(1) a {
+  --_delay: 0.75s;
 }
 
-#cart-toggle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
+.menu__container nav ul li:nth-of-type(2) a {
+  --_delay: 0.8s;
 }
 
-.cart__container {
-  position: fixed;
-  right: 0;
-  top: 0;
-  transform-origin: right;
-  transition: transform 0.7s cubic-bezier(0.83, 0, 0.17, 1);
-  width: min(100%, var(--max-cart-width));
-  height: 100vh;
-  background-color: var(--clr-brand-primary);
-  z-index: 400;
-  transform: translateX(110%);
+.menu__container nav ul li:nth-of-type(3) a {
+  --_delay: 0.85s;
+}
 
+.menu__container nav ul li:nth-of-type(4) a {
+  --_delay: 0.9s;
+}
+
+/* CHECK IF THE MENU IS OPEN THE FADE IN THE GROUPED LINKS */
+
+.mobile__menu #menu-toggle:checked ~ .menu__container .group ul {
+  animation: fadeIn 0.5s var(--_delay, 0.75s) cubic-bezier(0.85, 0, 0.15, 1)
+    backwards;
+}
+
+/* ADD STAGGERED EFFECT TO GROUPED LINKS */
+.menu__container .group:nth-of-type(1) ul {
+  --_delay: 1.3s;
+}
+
+.menu__container .group:nth-of-type(2) ul {
+  --_delay: 1.35s;
+}
+
+.menu__container .group:nth-of-type(3) ul {
+  --_delay: 1.4s;
+}
+
+.menu__container nav {
+  grid-area: links;
+}
+
+.menu__container nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.menu__container nav ul {
   display: flex;
   flex-direction: column;
-  padding: var(--layout-spacing);
-  padding-top: 4rem;
+  gap: 1rem;
 }
 
-.cart__container .img-container {
-  position: relative;
-  aspect-ratio: 1/1;
+.menu__container nav ul li {
+  font-size: 1.5rem;
+  list-style: none;
+}
+
+.menu__container nav ul li a {
   overflow: hidden;
 }
 
-.cart__container .img-container img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  transition: transform 0.5s 0.85s cubic-bezier(0.83, 0, 0.17, 1);
-  transform: scale(1.1);
-  filter: brightness(0.7);
+/* STYLING FOR MY EXTENDED LINKS ON THE OFF-CANVAS-MENU */
+.extended-links {
+  grid-area: extended-links;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.cart__container .img-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s cubic-bezier(0.83, 0, 0.17, 1);
-  transform-origin: top;
-  background-color: var(--clr-background);
+.group ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-#cart-toggle:checked ~ .cart__container {
-  transform: translateX(0);
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+  .header__links--desktop {
+    display: none;
+  }
+
+  .mobile__menu {
+    grid-column: -1;
+  }
 }
 
-#cart-toggle:checked ~ .cart__container .img-container::after {
-  animation: reveal 0.5s 0.85s cubic-bezier(0.83, 0, 0.17, 1) forwards;
-}
-
-#cart-toggle:checked ~ .cart__container .img-container img {
-  transform: scale(1);
+@media (max-width: 1024px) {
+  .mobile__menu .menu__container {
+    --_grid-gap: 3rem;
+    grid-template-areas:
+      "links links links links links links links links links links links links"
+      "extended-links extended-links extended-links extended-links extended-links extended-links extended-links extended-links extended-links extended-links extended-links extended-links";
+  }
 }

@@ -1,17 +1,15 @@
+/* REUSABLE GRID CLASS */
+
 .grid {
+  /* SINCE I MADE IT REUSABLE, I JUST MADE IT SO THAT THE COLUMN SIZE AND GAP COULD BE CHANGED EASILY USING LOCALLY DEFINED CSS CUSTOM PROPERTIES */
+  /* --_ IS JUST WHAT I PREFER TO DO WHEN NAMING LOCAL CSS PROPERTIES SO I KNOW WHATS GOING ON WHEN I INSPECT THINGS - A HABIT I PICKED UP A WHILE AGO FROM WATCHING KEVIN POWELL */
+
+  /* NOW THAT I LOOK AT THIS AGAIN I DONT REALLY NEED TO ADD THESE TWO LINES SINCE THEY HAVE FALLBACK VALUES */
   --_grid-size: 6;
+  --_grid-gap: 1rem;
+
   display: grid;
+  /* SETTING DEFAULT VALUES FOR GAP AND SIZE TO 0 AND 6 WHEN THEY ARE NOT DEFINED */
   grid-template-columns: repeat(var(--_grid-size, 6), 1fr);
-}
-
-.grid--inset-2 {
-  grid-column: 2 / span 2;
-}
-
-.grid--inset-3 {
-  grid-column: 3 / span 2;
-}
-
-.grid--inset-4 {
-  grid-column: 4 / span 2;
+  grid-gap: var(--_grid-gap, 0);
 }

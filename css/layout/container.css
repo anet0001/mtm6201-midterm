@@ -1,7 +1,11 @@
+/* REUSABLE CONTAINER CLASS THAT LIMITS THE CONTENT MAX WIDTH AND CENTER IT */
+
 .container {
   width: min(100% - 2rem, var(--max-container-width));
   margin: 0 auto;
 }
+
+/* MODIFIER CLASS FOR THE CONTAINER THAT HANDLES THE REVEAL ANIMATION ON ALL PAGES */
 
 .container--reveal {
   position: fixed;
@@ -11,6 +15,8 @@
   z-index: 10000;
 }
 
+/* BEFORE PSEUDO ELEMENT THAT ACTS AS THE COVER FOR THE CONTAINER */
+
 .container--reveal::before {
   content: "";
   position: absolute;
@@ -18,7 +24,8 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  transform-origin: top;
   background-color: black;
+  /* SETTING ORIGIN AND APPLYING REVEAL ANIMATION SO IT OPENS FROM BOTTOM TO TOP */
+  transform-origin: top;
   animation: reveal 0.5s 0.85s cubic-bezier(0.83, 0, 0.17, 1) forwards;
 }
