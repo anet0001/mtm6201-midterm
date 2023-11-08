@@ -1,5 +1,7 @@
+/* RESETTING THE MAX CONTAINER WITH JUST FOR THIS CONTAINER */
 .contact-page {
   --max-container-width: 1200px;
+  /* SETTING MIN HEIGHT OF THE CONTAINER */
   min-height: calc(100vh - (var(--menu-spacing) * 2));
 }
 
@@ -8,12 +10,14 @@
   display: flex;
   gap: 2rem;
   margin: 0 auto;
-  margin-top: var(--menu-spacing);
+  margin-top: calc(2 * var(--menu-spacing));
 }
 
+/* STYLING THE IMAGE CONTAINER */
 .contact__image-container {
   position: relative;
-  width: min(100% - 2rem, 500px);
+  width: min(100% - 2rem, 400px);
+  margin: 0 auto;
   aspect-ratio: 1/1;
   background-color: red;
   overflow: hidden;
@@ -22,6 +26,7 @@
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 }
 
+/* POSITIONING THE IMAGE */
 .contact__image-container .image {
   position: absolute;
   top: 0;
@@ -33,17 +38,75 @@
 .contact__image-container .image img {
   width: 100%;
   height: 100%;
+  transition: scale 0.3s ease-in-out;
   object-fit: cover;
 }
 
-.contact__image-container .block {
-  background-color: rgba(0, 0, 0, 1);
-  position: relative;
-  aspect-ratio: 1/1;
-  z-index: 1;
-	transition: .1s ease-in-out;
+/* ADDING SCALE EFFECT ON HOVER TO THE IMAGE */
+.contact__image-container:hover .image img {
+  scale: 1.1;
 }
 
-.contact__image-container .block:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+/* STYLING THE CONTACT FORM */
+.contact-form {
+  width: min(100% - 2rem, 500px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--clr-text-primary);
+}
+
+/**
+ * STYLES FOR THE CONTACT FORM SECTION OF THE WEBPAGE.
+ */
+.contact-form h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+}
+
+/**
+ * STYLES FOR THE FORM FIELDS OF THE CONTACT FORM.
+ */
+.form-field {
+  width: 100%;
+}
+
+/**
+ * STYLES FOR THE LABELS OF THE FORM FIELDS OF THE CONTACT FORM.
+ */
+.form-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/**
+ * STYLES FOR THE TEXTAREA FORM FIELD OF THE CONTACT FORM.
+ */
+.form-field textarea {
+  min-height: 50px;
+}
+
+/**
+ * STYLES FOR THE INPUT AND TEXTAREA FORM FIELDS OF THE CONTACT FORM.
+ */
+.form-field input,
+.form-field textarea {
+  background-color: transparent;
+  color: var(--clr-text-primary);
+  border: 1px solid var(--clr-text-primary);
+
+  outline: none;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .contact-page .container {
+    flex-direction: column;
+  }
 }

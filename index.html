@@ -10,13 +10,30 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <title>Bakery</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Artisan Bakes</title>
   </head>
   <body>
     <div class="container--reveal"></div>
-    <header>
+    <!-- HEADER WITH AN ID OF TOP FOR 'BACK TO TOP' BUTTON -->
+    <header id="top">
+      <!-- SKIP LINKS FOR ACCESSIBILITY -->
+      <ul class="skip-links">
+        <li class="skip-link__item">
+          <a href="#main" aria-label="Skip to About Section"
+            >Skip to Main Content</a
+          >
+        </li>
+        <li class="skip-link__item">
+          <a href="#footer" aria-label="Skip to Footer">Skip to Footer</a>
+        </li>
+      </ul>
+      <!-- HEADER WITH LINKS ARRANGED IN A GRID -->
       <nav class="header grid">
-        <div class="logo"></div>
+        <a href="index.html" class="logo"><span>ARTISAN</span>BAKES</a>
         <ul class="header__links header__links--desktop">
           <li class="header__link">
             <span class="outer">
@@ -41,6 +58,7 @@
           </li>
         </ul>
 
+        <!-- OFF CANVAS MOBILE MENU -->
         <div class="mobile__menu">
           <input
             aria-label="Open Navigation Menu"
@@ -48,6 +66,7 @@
             name="menu-toggle"
             id="menu-toggle"
           />
+          <!-- MENU TOGGLE MADE WITH TWO SPAN ELEMENTS -->
           <label
             aria-label="Open Navigation Menu"
             for="menu-toggle"
@@ -56,7 +75,10 @@
             <span class="line"></span>
             <span class="line"></span>
           </label>
-          <aside class="menu__container grid">
+          <!-- MENU CONTAINER - WASENT TOO SURE ABOUT WHAT WAS SEMANTICALLY CORRECT HERE SO I STUCK WITH A DIV -->
+          <!-- I WAS USING AN ASIDE BEFORE -->
+          <div class="menu__container grid">
+            <!-- NAV LINKS -->
             <nav>
               <ul>
                 <li>
@@ -75,12 +97,13 @@
                   >
                 </li>
                 <li>
-                  <a href="#" aria-label="Go to Contact Page"
+                  <a href="contact.html" aria-label="Go to Contact Page"
                     ><span>CONTACT</span></a
                   >
                 </li>
               </ul>
             </nav>
+            <!-- EXTRA 'LINKS' ON THE OFF CANVAS MENU -->
             <div class="extended-links">
               <div class="group">
                 <ul>
@@ -101,7 +124,7 @@
                 </ul>
               </div>
             </div>
-          </aside>
+          </div>
         </div>
       </nav>
     </header>
@@ -127,14 +150,28 @@
             <img
               class="hero__image"
               src="images/hero_640.png"
-              alt="Bakery Hero Image"
+              alt="Bakery Hero"
             />
           </picture>
         </div>
 
-        <div class="hero__content container"></div>
+        <div class="hero__content">
+          <!-- NO JAVASCRIPT SO I HAD TO MANUALLY SPLIT THE LETTERS TO STAGGER THEM WHEN ANIMATING-->
+          <!-- MADE SURE TO ADD THE LABEL SO A SCREEN READER DOSENT READ EACH LETTER SEPARATELY  -->
+          <h1 aria-label="artisan bakes">
+            <span class="util--light">A</span><span class="util--light">R</span
+            ><span class="util--light">T</span><span class="util--light">I</span
+            ><span class="util--light">S</span><span class="util--light">A</span
+            ><span class="util--light">N</span><span>B</span><span>A</span
+            ><span>K</span><span>E</span><span>S</span>
+          </h1>
+          <p>
+            <span>phasellus egestas tellus rutrum tellus pellentesque eu</span>
+          </p>
+        </div>
       </section>
-      <section class="grid quote container">
+      <section id="main" class="grid quote container">
+        <!-- ARTICLE -->
         <article>
           <p>
             Lorem ipsum dolor sit amet elit, sed do eiusmod tempor incididunt ut
@@ -148,6 +185,7 @@
             data-type="internal"
           >
             Read More
+            <!-- DECORATIVE SVG ARROWS -->
             <span class="arrow-wrapper"
               ><svg
                 width="10"
@@ -181,6 +219,7 @@
       </section>
       <!-- USING ARIA HIDDEN HERE BECAUSE THE IMAGE GRID IS PURELY DECORATIVE AND PROVIDES NO ADDITIONAL CONTEXT/INFORMATION -->
       <section class="image-cards grid" aria-hidden="true">
+        <!-- IMAGE CONTAINER WITH TWO ANIMATED IMAGES -->
         <div class="image-container">
           <picture class="image">
             <source
@@ -207,9 +246,11 @@
               srcset="images/image-2_640.png 640w"
             />
 
-            <img src="images/image-2_640.png" alt="Bakery Product Gallery" />
+            <img src="images/image-2_640.png" alt="Bakery Product 1" />
           </picture>
         </div>
+        <!-- IMAGE CONTAINER WITH TWO ANIMATED IMAGES -->
+
         <div class="image-container">
           <picture class="image">
             <source
@@ -222,7 +263,7 @@
               srcset="images/image-3_640.png 640w"
             />
 
-            <img src="images/image-3_640.png" alt="Bakery Product Gallery" />
+            <img src="images/image-3_640.png" alt="Bakery Product 2" />
           </picture>
 
           <picture class="image">
@@ -236,9 +277,11 @@
               srcset="images/image-4_640.png 640w"
             />
 
-            <img src="images/image-4_640.png" alt="Bakery Product Gallery" />
+            <img src="images/image-4_640.png" alt="Bakery Product 3" />
           </picture>
         </div>
+        <!-- IMAGE CONTAINER WITH TWO ANIMATED IMAGES -->
+
         <div class="image-container">
           <picture class="image">
             <source
@@ -270,6 +313,7 @@
         </div>
       </section>
       <section class="grid founder-quote container">
+        <!-- ARTICLE WITH BLOCKQUOTE -->
         <article>
           <blockquote>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -310,6 +354,7 @@
           </p>
           <a href="#" class="cta cta--arrow" data-type="internal">
             Shop
+            <!-- DECORATIVE SVG ARROW -->
             <span class="arrow-wrapper"
               ><svg
                 width="10"
@@ -342,19 +387,23 @@
         </article>
       </section>
     </main>
-    <footer>
+    <!-- FOOTER -->
+    <footer id="footer">
       <ul>
         <li>
-          <a href="">HOME</a>
+          <a href="index.html" aria-label="Go to Home Page">HOME</a>
         </li>
         <li>
-          <a href="">SHOP</a>
+          <a href="shop.html" aria-label="Go to Shop Page">SHOP</a>
         </li>
         <li>
-          <a href="">CONTACT</a>
+          <a href="contact.html" aria-label="Go to Contact Page">CONTACT</a>
         </li>
       </ul>
-      <small>&copy; 2023 All Rights Reserved</small>
+      <!-- FINE PRINT WITH BACK TO TOP LINK -->
+      <small
+        >&copy; 2023 All Rights Reserved <a href="#top">Skip to top</a></small
+      >
     </footer>
   </body>
 </html>

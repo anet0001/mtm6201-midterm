@@ -10,13 +10,32 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Contact Page</title>
   </head>
-  <body>    <div class="container--reveal"></div>
+  <body>
+    <!-- FIXED CONTAINER FOR REVEAL ANIMATION -->
+    <div class="container--reveal"></div>
 
-     <header>
+    <!-- HEADER WITH AN ID OF TOP FOR 'BACK TO TOP' BUTTON -->
+    <header id="top">
+      <!-- SKIP LINKS FOR ACCESSIBILITY -->
+      <ul class="skip-links">
+        <li class="skip-link__item">
+          <a href="#main" aria-label="Skip to About Section"
+            >Skip to Main Content</a
+          >
+        </li>
+        <li class="skip-link__item">
+          <a href="#footer" aria-label="Skip to Footer">Skip to Footer</a>
+        </li>
+      </ul>
+      <!-- HEADER WITH LINKS ARRANGED IN A GRID -->
       <nav class="header grid">
-        <div class="logo"></div>
+        <a href="index.html" class="logo"><span>ARTISAN</span>BAKES</a>
         <ul class="header__links header__links--desktop">
           <li class="header__link">
             <span class="outer">
@@ -41,6 +60,7 @@
           </li>
         </ul>
 
+        <!-- OFF CANVAS MOBILE MENU -->
         <div class="mobile__menu">
           <input
             aria-label="Open Navigation Menu"
@@ -48,6 +68,7 @@
             name="menu-toggle"
             id="menu-toggle"
           />
+          <!-- MENU TOGGLE MADE WITH TWO SPAN ELEMENTS -->
           <label
             aria-label="Open Navigation Menu"
             for="menu-toggle"
@@ -56,7 +77,10 @@
             <span class="line"></span>
             <span class="line"></span>
           </label>
-          <aside class="menu__container grid">
+          <!-- MENU CONTAINER - WASENT TOO SURE ABOUT WHAT WAS SEMANTICALLY CORRECT HERE SO I STUCK WITH A DIV -->
+          <!-- I WAS USING AN ASIDE BEFORE -->
+          <div class="menu__container grid">
+            <!-- NAV LINKS -->
             <nav>
               <ul>
                 <li>
@@ -75,12 +99,13 @@
                   >
                 </li>
                 <li>
-                  <a href="#" aria-label="Go to Contact Page"
+                  <a href="contact.html" aria-label="Go to Contact Page"
                     ><span>CONTACT</span></a
                   >
                 </li>
               </ul>
             </nav>
+            <!-- EXTRA 'LINKS' ON THE OFF CANVAS MENU -->
             <div class="extended-links">
               <div class="group">
                 <ul>
@@ -101,47 +126,71 @@
                 </ul>
               </div>
             </div>
-          </aside>
+          </div>
         </div>
       </nav>
     </header>
+    <!-- CONTACT PAGE MAIN CONTENT -->
     <main class="contact-page">
       <div class="container">
+        <!-- MAIN  IMAGE CONTAINER -->
         <div class="contact__image-container">
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
-          <div class="block"></div>
           <div class="image">
-            <img src="images/image-1_640.png" alt="contact" />
+            <picture>
+              <source
+                media="(max-width: 390px)"
+                srcset="images/contact_320.png 320w"
+              />
+
+              <source
+                media="(max-width: 768px)"
+                srcset="images/contact_640.png 640w"
+              />
+
+              <img
+                class="hero__image"
+                src="images/contact_640.png"
+                alt="Bakery Contact Image"
+              />
+            </picture>
           </div>
         </div>
-        <div class="contact-form"></div>
+        <!-- CONTACT FORM -->
+        <form class="contact-form">
+          <h1>Contact Us</h1>
+          <!-- FORM ELEMENTS ARE GROUPED TO MAKE LAYOUT EASIER TO MANAGE -->
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" />
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+        </form>
       </div>
     </main>
-    <footer></footer>
+    <!-- FOOTER -->
+    <footer id="footer">
+      <ul>
+        <li>
+          <a href="index.html" aria-label="Go to Home Page">HOME</a>
+        </li>
+        <li>
+          <a href="shop.html" aria-label="Go to Shop Page">SHOP</a>
+        </li>
+        <li>
+          <a href="contact.html" aria-label="Go to Contact Page">CONTACT</a>
+        </li>
+      </ul>
+      <!-- FINE PRINT WITH BACK TO TOP LINK -->
+      <small
+        >&copy; 2023 All Rights Reserved <a href="#top">Skip to top</a></small
+      >
+    </footer>
   </body>
 </html>

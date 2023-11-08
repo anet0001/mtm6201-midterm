@@ -10,115 +10,254 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Shop</title>
   </head>
   <body>
     <div class="container--reveal"></div>
-    <header>
+    <!-- HEADER WITH AN ID OF TOP FOR 'BACK TO TOP' BUTTON -->
+    <header id="top">
+      <!-- SKIP LINKS FOR ACCESSIBILITY -->
+      <ul class="skip-links">
+        <li class="skip-link__item">
+          <a href="#main" aria-label="Skip to About Section"
+            >Skip to Main Content</a
+          >
+        </li>
+        <li class="skip-link__item">
+          <a href="#footer" aria-label="Skip to Footer">Skip to Footer</a>
+        </li>
+      </ul>
+      <!-- HEADER WITH LINKS ARRANGED IN A GRID -->
       <nav class="header grid">
-        <div class="logo"></div>
-        <ul class="header__links">
+        <a href="index.html" class="logo"><span>ARTISAN</span>BAKES</a>
+        <ul class="header__links header__links--desktop">
           <li class="header__link">
             <span class="outer">
-              <a href="index.html"> <span class="inner">HOME</span></a>
+              <a href="index.html" aria-label="Go to Home Page">
+                <span class="inner">HOME</span></a
+              >
             </span>
           </li>
           <li class="header__link">
             <span class="outer">
-              <a href="shop.html"> <span class="inner">SHOP</span></a>
+              <a href="shop.html" aria-label="Go to Shop Page">
+                <span class="inner">SHOP</span></a
+              >
             </span>
           </li>
           <li class="header__link">
             <span class="outer">
-              <a href="#"> <span class="inner">CONTACT</span></a>
+              <a href="contact.html" aria-label="Go to Contact Page">
+                <span class="inner">CONTACT</span></a
+              >
             </span>
-          </li>
-          <li class="header__link">
-            <input type="checkbox" name="menu-toggle" id="menu-toggle" />
-            <label for="menu-toggle" class="menu__toggle">
-              <span class="line"></span>
-              <span class="line"></span>
-            </label>
-            <aside class="menu__container">
-              <nav>
-                <ul>
-                  <li>
-                    <a href="index.html">HOME </a>
-                  </li>
-                  <li><a href="about.html">ABOUT</a></li>
-                  <li><a href="#">SHOP</a></li>
-                  <li><a href="#">CONTACT</a></li>
-                </ul>
-              </nav>
-            </aside>
           </li>
         </ul>
+
+        <!-- OFF CANVAS MOBILE MENU -->
+        <div class="mobile__menu">
+          <input
+            aria-label="Open Navigation Menu"
+            type="checkbox"
+            name="menu-toggle"
+            id="menu-toggle"
+          />
+          <!-- MENU TOGGLE MADE WITH TWO SPAN ELEMENTS -->
+          <label
+            aria-label="Open Navigation Menu"
+            for="menu-toggle"
+            class="menu__toggle"
+          >
+            <span class="line"></span>
+            <span class="line"></span>
+          </label>
+          <!-- MENU CONTAINER - WASENT TOO SURE ABOUT WHAT WAS SEMANTICALLY CORRECT HERE SO I STUCK WITH A DIV -->
+          <!-- I WAS USING AN ASIDE BEFORE -->
+          <div class="menu__container grid">
+            <!-- NAV LINKS -->
+            <nav>
+              <ul>
+                <li>
+                  <a href="index.html" aria-label="Go to Home Page"
+                    ><span>HOME</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" aria-label="Go to About Page"
+                    ><span>ABOUT</span></a
+                  >
+                </li>
+                <li>
+                  <a href="shop.html" aria-label="Go to Shop Page"
+                    ><span>SHOP</span></a
+                  >
+                </li>
+                <li>
+                  <a href="contact.html" aria-label="Go to Contact Page"
+                    ><span>CONTACT</span></a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <!-- EXTRA 'LINKS' ON THE OFF CANVAS MENU -->
+            <div class="extended-links">
+              <div class="group">
+                <ul>
+                  <li>FAQS</li>
+                  <li>BLOG</li>
+                  <li>CONTACT</li>
+                </ul>
+              </div>
+              <div class="group">
+                <ul>
+                  <li>INSTAGRAM</li>
+                  <li>FACEBOOK</li>
+                </ul>
+              </div>
+              <div class="group">
+                <ul>
+                  <li>info@ourbakery.com</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
     </header>
 
     <main>
       <section class="product-grid grid">
         <article class="product">
-          <picture class="product__img-container">
-            <img src="images/image-2.png" alt="Cupcake" />
+          <picture class="image">
+            <source
+              media="(max-width: 390px)"
+              srcset="images/image-4_320.png 320w"
+            />
+
+            <source
+              media="(min-width: 768px)"
+              srcset="images/image-4_640.png 640w"
+            />
+
+            <img src="images/image-4_640.png" alt="Bakery Product Gallery" />
           </picture>
+          <p>Lorem Ipsum</p>
+          <span>$25</span>
+          <button>ADD TO CART</button>
         </article>
         <article class="product">
-          <picture class="product__img-container">
-            <img src="images/image-2.png" alt="Cupcake" />
+          <picture class="image">
+            <source
+              media="(max-width: 390px)"
+              srcset="images/image-2_320.png 320w"
+            />
+
+            <source
+              media="(min-width: 768px)"
+              srcset="images/image-2_640.png 640w"
+            />
+
+            <img src="images/image-2_640.png" alt="Bakery Product Gallery" />
           </picture>
+          <p>Lorem Ipsum</p>
+          <span>$25</span>
+          <button>ADD TO CART</button>
         </article>
         <article class="product">
-          <picture class="product__img-container">
-            <img src="images/image-2.png" alt="Cupcake" />
+          <picture class="image">
+            <source
+              media="(max-width: 390px)"
+              srcset="images/image-3_320.png 320w"
+            />
+
+            <source
+              media="(min-width: 768px)"
+              srcset="images/image-3_640.png 640w"
+            />
+
+            <img src="images/image-3_640.png" alt="Bakery Product Gallery" />
           </picture>
+          <p>Lorem Ipsum</p>
+          <span>$25</span>
+          <button>ADD TO CART</button>
         </article>
         <article class="product">
-          <picture class="product__img-container">
-            <img src="images/image-2.png" alt="Cupcake" />
+          <picture class="image">
+            <source
+              media="(max-width: 390px)"
+              srcset="images/image-1_320.png 320w"
+            />
+
+            <source
+              media="(min-width: 768px)"
+              srcset="images/image-1_640.png 640w"
+            />
+
+            <img src="images/image-1_640.png" alt="Bakery Product Gallery" />
           </picture>
+          <p>Lorem Ipsum</p>
+          <span>$25</span>
+          <button>ADD TO CART</button>
         </article>
         <article class="product">
-          <picture class="product__img-container">
-            <img src="images/image-2.png" alt="Cupcake" />
+          <picture class="image">
+            <source
+              media="(max-width: 390px)"
+              srcset="images/image-5_320.png 320w"
+            />
+
+            <source
+              media="(min-width: 768px)"
+              srcset="images/image-5_640.png 640w"
+            />
+
+            <img src="images/image-5_640.png" alt="Bakery Product Gallery" />
           </picture>
+          <p>Lorem Ipsum</p>
+          <span>$25</span>
+          <button>ADD TO CART</button>
         </article>
         <article class="product">
-          <picture class="product__img-container">
-            <img src="images/image-2.png" alt="Cupcake" />
+          <picture class="image">
+            <source
+              media="(max-width: 390px)"
+              srcset="images/image-6_320.png 320w"
+            />
+
+            <source
+              media="(min-width: 768px)"
+              srcset="images/image-6_640.png 640w"
+            />
+
+            <img src="images/image-6_640.png" alt="Bakery Product Gallery" />
           </picture>
-        </article>
-        <article class="product">
-          <picture class="product__img-container">
-            <img src="images/image-2.png" alt="Cupcake" />
-          </picture>
-        </article>
-        <article class="product">
-          <picture class="product__img-container">
-            <img src="images/image-2.png" alt="Cupcake" />
-          </picture>
-        </article>
-        <article class="product">
-          <picture class="product__img-container">
-            <img src="images/image-2.png" alt="Cupcake" />
-          </picture>
-        </article>
-        <article class="product">
-          <picture class="product__img-container">
-            <img src="images/image-2.png" alt="Cupcake" />
-          </picture>
-        </article>
-        <article class="product">
-          <picture class="product__img-container">
-            <img src="images/image-2.png" alt="Cupcake" />
-          </picture>
-        </article>
-        <article class="product">
-          <picture class="product__img-container">
-            <img src="images/image-2.png" alt="Cupcake" />
-          </picture>
+          <p>Lorem Ipsum</p>
+          <span>$25</span>
+          <button>ADD TO CART</button>
         </article>
       </section>
     </main>
+    <!-- FOOTER -->
+    <footer id="footer">
+      <ul>
+        <li>
+          <a href="index.html" aria-label="Go to Home Page">HOME</a>
+        </li>
+        <li>
+          <a href="shop.html" aria-label="Go to Shop Page">SHOP</a>
+        </li>
+        <li>
+          <a href="contact.html" aria-label="Go to Contact Page">CONTACT</a>
+        </li>
+      </ul>
+      <!-- FINE PRINT WITH BACK TO TOP LINK -->
+      <small
+        >&copy; 2023 All Rights Reserved <a href="#top">Skip to top</a></small
+      >
+    </footer>
   </body>
 </html>
