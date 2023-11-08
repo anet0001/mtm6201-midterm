@@ -252,6 +252,7 @@ nav.header .logo span {
   width: 100vw;
   background-color: var(--clr-brand-primary);
   z-index: 500;
+  overflow-x: hidden;
   /* TAKING THE MENU OFF-CANVAS */
   transform: translateY(-100%);
 
@@ -378,7 +379,7 @@ nav.header .logo span {
   .mobile__menu .menu__container {
     --_grid-gap: 3rem;
     grid-template-areas:
-      "links links links links links links links links links links links links"
-      "extended-links extended-links extended-links extended-links extended-links extended-links extended-links extended-links extended-links extended-links extended-links extended-links";
+      "links links links links links . . . . . . ."
+      "extended-links extended-links extended-links extended-links extended-links extended-links . . . . . .";
   }
 }

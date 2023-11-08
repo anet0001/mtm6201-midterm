@@ -11,6 +11,13 @@
   margin-bottom: 10rem;
 }
 
+.shop-header {
+  margin-top: var(--menu-spacing);
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 /* STYLES FOR THE PRODUCT ARTICLE */
 .product {
   width: 100%;

@@ -5,6 +5,12 @@
   min-height: calc(100vh - (var(--menu-spacing) * 2));
 }
 
+.contact-header {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .contact-page .container {
   position: relative;
   display: flex;

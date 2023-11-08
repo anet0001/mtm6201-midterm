@@ -4,7 +4,7 @@ section.hero {
 
 .hero__content {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   width: min(100%, var(--max-container-width));
   transform: translate(-50%, -50%);
@@ -103,14 +103,17 @@ section.hero .hero__image-wrapper {
 }
 
 /* HERO WRAPPER WITH REDUCED BRIGHTNESS TO MAKE THE NAVIGATION LINKS TEXT MORE VISIBLE */
-section.hero .hero__image-wrapper img {
+section.hero .hero__image-wrapper picture {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
-  filter: brightness(0.5);
   /* ZOOM OUT ANIMATION ON IMAGE THAT STARTS AFTER THE PAGE COVER ANIMATION IS DONE */
   animation: zoomOut 1s 1.75s cubic-bezier(0.85, 0, 0.15, 1) backwards;
+}
+
+section.hero .hero__image-wrapper {
+  filter: brightness(0.5);
 }
 
 section.image-cards {

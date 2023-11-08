@@ -130,29 +130,20 @@
       <div class="container">
         <!-- MAIN  IMAGE CONTAINER -->
         <div class="contact__image-container">
-          <div class="image">
-            <picture>
-              <source
-                media="(max-width: 390px)"
-                srcset="images/contact_320.png 320w"
-              />
-
-              <source
-                media="(max-width: 768px)"
-                srcset="images/contact_640.png 640w"
-              />
-
-              <img
-                class="hero__image"
-                src="images/contact_640.png"
-                alt="Bakery Contact Image"
-              />
-            </picture>
-          </div>
+          <figure class="image">
+            <img
+              class="image"
+              srcset="images/contact_320.png 320w, images/contact_640.png 640w"
+              sizes="(max-width: 390px) 320px,
+           640px"
+              src="images/contact_640.png"
+              alt="Bakery Contact US"
+            />
+          </figure>
         </div>
         <!-- CONTACT FORM -->
         <form class="contact-form">
-          <h1>Contact Us</h1>
+          <h1 class="contact-header">Contact Us</h1>
           <!-- FORM ELEMENTS ARE GROUPED TO MAKE LAYOUT EASIER TO MANAGE -->
           <div class="form-field">
             <label for="name">Name</label>

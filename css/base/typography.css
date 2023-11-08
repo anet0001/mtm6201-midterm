@@ -12,3 +12,9 @@ p + a[data-type="internal"] {
   color: var(--clr-text-primary);
   text-decoration: none;
 }
+
+h2 {
+  font-size: 1rem;
+  margin-bottom: calc(var(--layout-spacing) * 0.15);
+  font-weight: 500;
+}
