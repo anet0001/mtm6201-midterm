@@ -163,14 +163,14 @@ div.image-container .image:last-of-type {
 /* SETTING DIFFERENT ASPECT RATIOS ON THE IMAGE CONTAINERS */
 
 div.image-container:nth-of-type(1) {
-  aspect-ratio: 0.93;
+  aspect-ratio: 93/100;
 }
 
 div.image-container:nth-of-type(2) {
-  aspect-ratio: 0.77;
+  aspect-ratio: 77/100;
 }
 div.image-container:nth-of-type(3) {
-  aspect-ratio: 1.21;
+  aspect-ratio: 121/100;
 }
 
 /* WHEN THE CONTAINER IS HOVERED THE IMAGE-CONTAINER TRANSLATES INTO VIEW AND THE IMAGE IN IT SCALE UP */
